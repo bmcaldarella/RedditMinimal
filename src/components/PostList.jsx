@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchPost } from '../features/posts/postsSlice';
+import '../styles/card.css'
 
 const PostList = () => {
     const dispatch = useDispatch();
@@ -17,17 +18,37 @@ const PostList = () => {
 
     return (
         <div>
-            {posts.map((post) => (
-                <div key={post.id}>
-                    <h3>{post.title}</h3>
-                    <p>{post.selftext}</p>
-                    <a href={`https://www.reddit.com${post.permalink}`} target="_blank" rel="noopener noreferrer">
-                        Ver en Reddit
-                    </a>
-                </div>
-            ))}
-        </div>
-    );
-};
+        
+          {posts.map((post) => {
+            const isImage = post.url && post.url.match(/\.(jpeg|jpg|gif|png)$/);
+    
+            return (
+               
+              <div className='card-list' key={post.id}>
+              
+              
+                <h2 className='post-title'>{post.title}</h2>
 
+               
+                {isImage ? (
+                    
+                  <img className='post-img' src={post.url} alt="Post-image" />
+                 
+                )  : (
+                    <p className='post-txt'>{post.selftext}</p>
+                )}
+
+               
+                <p>{post.ups}</p>
+                <p>{post.author}</p>
+                
+                <img className="post-img" src={post.post_hint} alt="Post image" />
+                <p>Comentarios: {post.num_comments}</p>
+              </div>
+            
+            );
+          })}
+        </div>
+      );
+    };
 export default PostList;

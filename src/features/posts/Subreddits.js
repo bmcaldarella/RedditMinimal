@@ -1,5 +1,6 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
+import { Link } from 'react-router-dom'; // Import Link
 
 export const fetchSubreddits = createAsyncThunk('subreddits/fetchSubreddits', async () => {
     const response = await axios.get('https://www.reddit.com/r/popular.json');

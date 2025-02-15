@@ -1,8 +1,7 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchSubreddits } from "../features/posts/Subreddits";
-import '../styles/card.css';
-
+import '../styles/subreddits.css';
 
 const Subreddits = () => {
     const dispatch = useDispatch();
@@ -18,15 +17,24 @@ const Subreddits = () => {
     if (status === "failed") return <p>Error: {error}</p>;
     if (subreddits.length === 0) return <p>No hay subreddits aún.</p>;
 
+    const getRandomImage = () => `https://picsum.photos/200/200?random=${Math.random()}`;
+
     return (
-        <>
-            <h1>Subreddits populares</h1>
+        <div className="subreddits-container">
+           
             <ul>
                 {subreddits.map((subreddit) => (
-                    <li key={subreddit.id}>{subreddit.display_name}</li>
+                    
+                    <li className="options" key={subreddit.id}>
+                        <div>
+                        <span><img className="img-subreddit" src={getRandomImage()} alt="Subreddit"/>
+                                {subreddit.subreddit}</span> 
+
+                        </div>
+                    </li>
                 ))}
             </ul>
-        </>
+        </div>
     );
 }
 

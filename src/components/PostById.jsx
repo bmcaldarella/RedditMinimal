@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchPost } from '../features/posts/postsSlice';
 import { formatDistanceToNow } from 'date-fns';
-import { useParams } from "react-router-dom"; 
+import { Link, useParams } from "react-router-dom"; 
 import Comments from './Comments';
 
 const PostById = () => {
@@ -25,8 +25,11 @@ const PostById = () => {
     const isImage = post.url && post.url.match(/\.(jpeg|jpg|gif|png)$/);
     const timeAgo = formatDistanceToNow(new Date(post.created_utc * 1000), { addSuffix: true });
 
+
     return (
+        
         <div>
+            <button >  <Link to={`/`}> ← </Link> </button>
             <div className='card-list'>
                 <div>
                     <p>{post.author}</p>

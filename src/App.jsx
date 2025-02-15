@@ -13,7 +13,6 @@ function App() {
                 <Routes>
                     <Route path="/" element={<PostList />} />
                     <Route path="/post/:postId" element={<PostById />} />
-                   
                 </Routes>
                  <Subreddits />
             </div>

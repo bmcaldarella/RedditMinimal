@@ -1,10 +1,9 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchPost } from '../features/posts/postsSlice';
-import { formatDistanceToNow } from 'date-fns'; 
+import { formatDistanceToNow } from 'date-fns';
+import { Link } from "react-router-dom";
 import '../styles/card.css';
-import Comments from './Comments';
-
 
 const PostList = () => {
   const dispatch = useDispatch();
@@ -21,35 +20,47 @@ const PostList = () => {
 
   return (
     <div>
-       
       {posts.map((post) => {
         const isImage = post.url && post.url.match(/\.(jpeg|jpg|gif|png)$/);
-
         const timeAgo = formatDistanceToNow(new Date(post.created_utc * 1000), { addSuffix: true });
+        const formatNumber = (num) => {
+          if (num >= 1_000_000) {
+            return (num / 1_000_000).toFixed(1) + "M"; // 1M, 2.5M, etc.
+          } else if (num >= 1_000) {
+            return (num / 1_000).toFixed(1) + "k"; // 1k, 2.3k, etc.
+          } else {
+            return num;
+          }
+        }
+        const like = post.ups;
 
         return (
           <div className='card-list' key={post.id}>
-           <div>
-            <p>{post.author}</p>
-            <p>{timeAgo}</p> 
-            </div>
-          
-            <h2 className='post-title'>{post.title}</h2>
+            <Link to={`/post/${post.id}`} className="post-title-link">
 
-            {isImage ? (
-              <img className='post-img' src={post.url} alt="Post-image" />
-            ) : (
-              <p className='post-txt'>{post.selftext}</p>
-            )}
 
-            <p>{post.ups}</p>
-            <p>Comentarios: {post.num_comments}</p>
-           
+              <div>
+                <h6>{post.author} • <span>{timeAgo}</span></h6>
+              </div>
+
+
+              <h2 className='post-title'>{post.title}</h2>
+
+              {isImage ? (
+                <img className='post-img' src={post.url} alt="Post" />
+              ) : (
+                <p className='post-txt'>{post.selftext}</p>
+              )}
+
+              <p>Comments: {post.num_comments}</p>
+
+            </Link>
+            <p>{formatNumber(post.ups)} 👍</p>
           </div>
+
         );
       })}
     </div>
-   
   );
 };
 

@@ -26,6 +26,8 @@ const Comments = ({ postId }) => {
                     </div>
                 );
             })}
+            <Comments postId={post.id} />
+            
         </>
     );
 };

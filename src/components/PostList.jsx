@@ -44,7 +44,6 @@ const PostList = () => {
 
             <p>{post.ups}</p>
             <p>Comentarios: {post.num_comments}</p>
-            <Comments postId={post.id} />
            
           </div>
         );

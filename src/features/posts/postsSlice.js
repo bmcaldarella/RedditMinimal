@@ -1,7 +1,6 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-// Función para obtener posts de Reddit
 export const fetchPost = createAsyncThunk('posts/fetchPost', async (query = '') => {
     const url = query 
         ? `https://www.reddit.com/search.json?q=${query}` 

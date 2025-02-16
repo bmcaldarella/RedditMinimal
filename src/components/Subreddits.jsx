@@ -21,14 +21,15 @@ const Subreddits = () => {
 
     return (
         <div className="subreddits-container">
-           
+                   <h3 className="sub-title">Subreddits</h3>
+
             <ul>
                 {subreddits.map((subreddit) => (
                     
                     <li className="options" key={subreddit.id}>
                         <div>
-                        <span><img className="img-subreddit" src={getRandomImage()} alt="Subreddit"/>
-                                {subreddit.subreddit}</span> 
+                        <img className="img-subreddit" src={getRandomImage()} alt="Subreddit"/>
+                        <span className="text-subreddit"> {subreddit.subreddit}</span> 
 
                         </div>
                     </li>

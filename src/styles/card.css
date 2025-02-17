@@ -2,8 +2,7 @@
     display: flex;
     flex-wrap: wrap;
     position: relative;
-    max-width: 40rem;
-    width: 100%;
+    width: 40rem;
     margin: 1rem  auto;
  
 }

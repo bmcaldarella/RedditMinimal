@@ -24,6 +24,7 @@ const SubredditsById = ({SubredditsById}) => {
 
           return (
             <div>
+              
               {posts.map((post) => {
                 const isImage = post.url && post.url.match(/\.(jpeg|jpg|gif|png)$/);
                 const timeAgo = formatDistanceToNow(new Date(post.created_utc * 1000), { addSuffix: true });

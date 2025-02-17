@@ -9,7 +9,6 @@ function App() {
     return (
         <Router>
             <div>
-                <h1>Reddit Clone</h1>
                 
                 <SearchBar />
                 <Subreddits />

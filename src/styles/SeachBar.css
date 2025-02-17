@@ -1,0 +1,56 @@
+.logo-reddit{
+    width: 70px;
+    height: 70px;
+}
+
+
+.logo-container{
+    display: flex;
+    height: 0;
+}
+
+.logo-reddit-text{
+    font-size: 20px;
+    position: relative;
+    top:25px;
+}
+
+.logo-text{
+    color:rgb(143, 143, 206);
+   
+}
+
+.search-bar-container{
+    display: flex;
+    justify-content: center;
+    top: -0.5rem;
+    left: 1rem;
+    z-index: 1;
+    position:sticky;
+    padding: 2rem;
+    width: 100%;
+   
+    
+}
+
+.search-bar{
+margin: 0 auto;
+width: 20rem;
+height: 2rem;
+border-radius:10px;
+padding: 10px;
+border: 1px solid rgba(143, 143, 206, 0.277);
+}
+
+.search{
+    display: flex;
+    margin: 10px auto;
+    background-color: transparent;
+    
+}
+
+.lupa-search{
+    padding: 10px;
+    width: 20px;
+    height: 30px;
+}

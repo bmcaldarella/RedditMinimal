@@ -1,15 +1,18 @@
 .subreddits-container{
     display: inline-block;
     flex-wrap: wrap;
-    max-height:30rem;
+    max-height:40rem;
     height: auto;
-    max-width: 15rem;
+    max-width: 20rem;
     width: 100%;
     overflow-y: auto;
     overflow-x: hidden;
     margin: 10px 12px;
     border: 0.5px solid rgba(143, 143, 206, 0.198);
     border-radius: 10px;
+    position: fixed;
+    padding-top: 10px;
+    top: 9rem;
 }
 .img-subreddit{
     border-radius: 50%;

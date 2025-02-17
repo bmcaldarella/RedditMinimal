@@ -6,7 +6,7 @@ import '../styles/subreddits.css';
 const Subreddits = () => {
     const dispatch = useDispatch();
     const { subreddits, status, error } = useSelector((state) => state.subreddits);
-
+    
     useEffect(() => {
         if (status === 'idle') {
             dispatch(fetchSubreddits());
@@ -18,9 +18,14 @@ const Subreddits = () => {
     if (subreddits.length === 0) return <p>No hay subreddits aún.</p>;
 
     const getRandomImage = () => `https://picsum.photos/200/200?random=${Math.random()}`;
+    
+
 
     return (
+        <>
+        
         <div className="subreddits-container">
+
                    <h3 className="sub-title">Subreddits</h3>
 
             <ul>
@@ -36,6 +41,7 @@ const Subreddits = () => {
                 ))}
             </ul>
         </div>
+        </>
     );
 }
 

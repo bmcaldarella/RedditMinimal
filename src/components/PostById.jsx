@@ -29,9 +29,10 @@ const PostById = () => {
     return (
         
         <div>
-            <button >  <Link to={`/`}> ← </Link> </button>
             <div className='card-list'>
                 <div>
+                <button className='button-back' >  <Link to={`/`}> ← </Link> </button>
+
                     <p>{post.author}</p>
                     <p>{timeAgo}</p> 
                 </div>

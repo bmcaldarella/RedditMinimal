@@ -54,3 +54,42 @@ border: 1px solid rgba(143, 143, 206, 0.277);
     width: 20px;
     height: 30px;
 }
+
+
+@media screen and (max-width: 780px) {
+    .search-bar-container{
+        display: block;
+        
+       
+        
+    }
+    .logo-reddit-text{
+        display: none;
+    }
+    .logo-reddit{
+        width:50px;
+        height: 50px;
+        position: relative;
+        left: 1rem;
+        top:2rem;
+    }
+    .lupa{
+        display: none;
+    }
+    .search-bar-container{
+        width: auto;
+        display: block;
+        margin-top:10px;
+     
+    }
+    .search-bar{
+        width: auto;
+        margin: 0 auto;
+        position: relative;
+        top:20px;
+    }
+    .logo-containe{
+        width: 100%;
+        display: flex;
+    }
+    }

@@ -1,0 +1,80 @@
+.comments{
+    display: block;
+    flex-direction: column;
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    width: 40rem;
+    margin: 0 auto;
+    
+}
+
+.comment{
+    display: block;
+    border: 0.5px solid rgba(255, 255, 255, 0.369);
+    gap: 30px;
+    margin-top: 20px;
+    padding: 40px;
+    border-radius: 5px;
+ 
+}
+
+h6{
+    font-family: 'Roboto', sans-serif;
+    font-size: 10px;
+    padding:17px;
+    color:rgb(82, 82, 170);
+}
+
+.button-back{
+    font-size: 50px;
+    background-color: transparent;
+}
+
+.button-back:hover{
+    cursor: pointer;
+    
+}
+
+.comment-txt{
+    overflow: hidden;
+}
+
+@media screen and (max-width: 1300px) {
+    .subreddits-container{
+        display: none;
+    }
+    .comments{
+        width: 40rem;
+    }
+    .card-list{
+        width: 40rem;
+    }
+    .comment{
+        display:block;
+        justify-content: center;
+
+        width: 18rem;
+
+      
+    }   
+}
+
+@media screen and (max-width: 600px) {
+    .subreddits-container{
+        display: none;
+    }
+    .comments{
+        width:10rem;
+    }
+    .comment{
+        display:block;
+        justify-content: center;
+
+        width: 18rem;
+    }
+    .card-list{
+        width: 10rem;
+    }
+
+}
